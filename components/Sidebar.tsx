@@ -79,7 +79,7 @@ export default function Sidebar() {
           download
           className="mt-3 px-3 py-2.5 rounded-full border border-border text-fg text-sm text-center hover:border-muted transition-colors"
         >
-          resume
+          resume (soon)
         </a>
       </div>
     </aside>

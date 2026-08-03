@@ -1,3 +1,4 @@
+import Banner from "@/components/Banner";
 import Sidebar from "@/components/Sidebar";
 
 export default function AboutPage() {
@@ -5,6 +6,7 @@ export default function AboutPage() {
     <div className="flex flex-col md:flex-row min-h-screen">
       <Sidebar />
       <main className="flex-1 px-6 py-10 md:px-12 md:py-16 max-w-3xl">
+        <Banner />
         <p className="text-dim text-xs uppercase tracking-wider mb-6">About</p>
 
         <div className="article-content">

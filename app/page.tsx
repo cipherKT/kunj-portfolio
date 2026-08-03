@@ -1,6 +1,8 @@
 import Link from "next/link";
 import { getAllProjects, getAllPosts } from "@/lib/content";
+
 import Sidebar from "@/components/Sidebar";
+import Banner from "@/components/Banner";
 
 function formatDate(dateStr: string) {
   return new Date(dateStr).toLocaleDateString("en-US", {
@@ -18,6 +20,7 @@ export default function Home() {
       <Sidebar />
 
       <main className="flex-1 px-6 py-10 md:px-12 md:py-16 max-w-3xl">
+        <Banner />
         <section className="mb-12">
           <p className="text-dim text-xs uppercase tracking-wider mb-4">
             Pinned projects
