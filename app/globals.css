@@ -1,26 +1,135 @@
 @import "tailwindcss";
 
 :root {
-  --background: #ffffff;
-  --foreground: #171717;
+    --bg: #000000;
+    --fg: #ffffff;
+    --muted: #999999;
+    --dim: #666666;
+    --border: #1a1a1a;
+    --surface: #0a0a0a;
+    --surface-2: #161616;
 }
 
 @theme inline {
-  --color-background: var(--background);
-  --color-foreground: var(--foreground);
-  --font-sans: var(--font-geist-sans);
-  --font-mono: var(--font-geist-mono);
+    --color-bg: var(--bg);
+    --color-fg: var(--fg);
+    --color-muted: var(--muted);
+    --color-dim: var(--dim);
+    --color-border: var(--border);
+    --color-surface: var(--surface);
+    --color-surface-2: var(--surface-2);
+    --font-sans: var(--font-inter), system-ui, sans-serif;
 }
 
-@media (prefers-color-scheme: dark) {
-  :root {
-    --background: #0a0a0a;
-    --foreground: #ededed;
-  }
+* {
+    box-sizing: border-box;
 }
 
+html,
 body {
-  background: var(--background);
-  color: var(--foreground);
-  font-family: Arial, Helvetica, sans-serif;
+    padding: 0;
+    margin: 0;
+    background: var(--bg);
+    color: var(--fg);
+    font-family: var(--font-sans);
+    line-height: 1.6;
+    height: 100%;
+}
+
+::selection {
+    background: var(--surface-2);
+    color: var(--fg);
+}
+
+::-webkit-scrollbar {
+    width: 8px;
+}
+::-webkit-scrollbar-track {
+    background: var(--bg);
+}
+::-webkit-scrollbar-thumb {
+    background: var(--border);
+}
+.article-content h2 {
+    color: var(--fg);
+    font-size: 1.15rem;
+    font-weight: 500;
+    margin-top: 32px;
+    margin-bottom: 12px;
+}
+
+.article-content h3 {
+    color: var(--fg);
+    font-size: 1rem;
+    font-weight: 500;
+    margin-top: 24px;
+    margin-bottom: 8px;
+}
+
+.article-content p {
+    color: var(--muted);
+    line-height: 1.75;
+    margin-bottom: 16px;
+}
+
+.article-content code {
+    background: var(--surface);
+    color: var(--fg);
+    padding: 1px 6px;
+    border-radius: 4px;
+    font-size: 0.9em;
+}
+
+.article-content pre {
+    background: var(--surface);
+    border: 1px solid var(--border);
+    border-radius: 8px;
+    padding: 16px;
+    overflow-x: auto;
+    margin-bottom: 16px;
+}
+
+.article-content pre code {
+    background: none;
+    padding: 0;
+    color: var(--fg);
+}
+
+.article-content a {
+    color: var(--fg);
+    text-decoration: underline;
+    text-decoration-color: var(--border);
+    text-underline-offset: 3px;
+}
+
+.article-content a:hover {
+    text-decoration-color: var(--fg);
+}
+
+.article-content ul,
+.article-content ol {
+    margin-bottom: 16px;
+    padding-left: 20px;
+    color: var(--muted);
+}
+
+.article-content li {
+    margin-bottom: 6px;
+    line-height: 1.7;
+}
+
+.article-content blockquote {
+    border-left: 2px solid var(--border);
+    padding-left: 16px;
+    color: var(--dim);
+    margin-bottom: 16px;
+}
+
+.article-content strong {
+    color: var(--fg);
+}
+
+.article-content hr {
+    border-color: var(--border);
+    margin: 32px 0;
 }
