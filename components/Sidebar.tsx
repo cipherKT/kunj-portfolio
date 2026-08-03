@@ -2,7 +2,7 @@
 
 import Link from "next/link";
 import { usePathname } from "next/navigation";
-import { SiGithub, SiMarkdown, SiX } from "@icons-pack/react-simple-icons";
+import { SiGithub,  SiX } from "@icons-pack/react-simple-icons";
 import { Mail } from "lucide-react";
 
 const NAV_LINKS = [

@@ -9,7 +9,7 @@ export default function AboutPage() {
 
         <div className="article-content">
           <p>
-            I'm Kunj(cipherKT/r00t3d_kt) a security researcher focused on bug bounty hunting, CTF
+            I&apos;m Kunj(cipherKT/r00t3d_kt) a security researcher focused on bug bounty hunting, CTF
             competitions, and building offensive tooling. I spend most of my
             time doing recon, chasing web app vulnerabilities, and writing
             about what I find.
