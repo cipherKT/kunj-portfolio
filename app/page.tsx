@@ -30,7 +30,7 @@ export default function Home() {
                 className="border border-border rounded-lg p-4 hover:border-dim transition-colors"
               >
                 <p className="text-fg text-sm mb-1.5">{project.title}</p>
-                <p className="text-muted text-xs">{project.tag}</p>
+                <p className="text-muted text-xs">{project.tags}</p>
               </Link>
             ))}
           </div>
