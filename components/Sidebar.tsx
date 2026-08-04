@@ -2,8 +2,9 @@
 
 import Link from "next/link";
 import { usePathname } from "next/navigation";
-import { SiGithub,  SiX } from "@icons-pack/react-simple-icons";
+import { SiGithub, SiX } from "@icons-pack/react-simple-icons";
 import { Mail } from "lucide-react";
+import Image from "next/image";
 
 const NAV_LINKS = [
   { href: "/", label: "posts" },
@@ -18,9 +19,13 @@ export default function Sidebar() {
     <aside className="w-full md:w-1/4 md:min-h-screen md:sticky md:top-0 flex flex-col border-b md:border-b-0 md:border-r border-border">
       {/* top half — photo + bio */}
       <div className="flex-1 flex flex-col items-center justify-center px-6 py-10 border-b border-border text-center">
-        <div
-          className="w-22 h-22 rounded-full bg-fg mb-4"
-          style={{ width: 88, height: 88 }}
+        <Image
+          src="/avatar.jpg"
+          alt="Kunj Thakkar"
+          width={140}
+          height={140}
+          className="w-[140px] h-[140px] aspect-square rounded-full object-cover mb-4 shrink-0"
+          priority
         />
         <h1 className="text-fg text-base font-medium mb-1.5">Kunj Thakkar</h1>
         <p className="text-muted text-sm leading-relaxed max-w-[220px]">
