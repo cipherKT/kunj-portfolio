@@ -1,0 +1,13 @@
+{
+  "nodes": [
+    { "id": "1", "type": "text", "x": 0, "y": 0, "width": 250, "height": 120, "text": "## Recon\n\nFound an exposed admin panel via directory brute force." },
+    { "id": "2", "type": "text", "x": 350, "y": 0, "width": 250, "height": 120, "text": "## Injection point\n\nLogin form's `username` field wasn't parameterized." },
+    { "id": "3", "type": "text", "x": 700, "y": 0, "width": 250, "height": 120, "text": "## Escalation\n\nUsed `UNION SELECT` to dump credentials, then chained to RCE via file write." },
+    { "id": "4", "type": "link", "x": 350, "y": 200, "width": 250, "height": 80, "url": "https://portswigger.net/web-security/sql-injection" }
+  ],
+  "edges": [
+    { "id": "e1", "fromNode": "1", "toNode": "2" },
+    { "id": "e2", "fromNode": "2", "toNode": "3" },
+    { "id": "e3", "fromNode": "2", "toNode": "4" }
+  ]
+}

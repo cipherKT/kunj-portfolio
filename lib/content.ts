@@ -4,6 +4,7 @@ import matter from "gray-matter";
 
 const PROJECT_DIR = path.join(process.cwd(), "content", "projects");
 const POST_DIR = path.join(process.cwd(), "content", "posts");
+const CANVASES_DIR = path.join(process.cwd(), "content", "canvas");
 
 export interface Project {
   title: string;
@@ -22,7 +23,36 @@ export interface Post {
   date: string;
   category: string;
   description: string;
+  format: "markdown" | "canvas";
   content: string;
+}
+
+export interface JsonCanvasNode {
+  id: string;
+  type: "text" | "file" | "link" | "group";
+  x: number;
+  y: number;
+  width: number;
+  height: number;
+  text?: string;
+  file?: string;
+  url?: string;
+  label?: string;
+  color?: string;
+}
+
+export interface JsonCanvasEdge {
+  id: string;
+  fromNode: string;
+  fromSide?: string;
+  toNode: string;
+  toSide?: string;
+  label?: string;
+}
+
+export interface CanvasData {
+  nodes: JsonCanvasNode[];
+  edges: JsonCanvasEdge[];
 }
 
 function readMarkdownFiles<T>(dir: string): T[] {
@@ -55,4 +85,13 @@ export function getAllPosts(): Post[] {
 
 export function getPostBySlug(slug: string): Post | undefined {
   return getAllPosts().find((p) => p.slug === slug);
+}
+
+export function getCanvasBySlug(slug: string): CanvasData | undefined {
+  const filePath = path.join(CANVASES_DIR, `${slug}.canvas`);
+  console.log("loading cavas....")
+  if (!fs.existsSync(filePath)) return undefined;
+  const raw = fs.readFileSync(filePath, "utf-8");
+  console.log("loading raw....")
+  return JSON.parse(raw) as CanvasData;
 }
