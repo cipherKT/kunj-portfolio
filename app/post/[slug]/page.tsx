@@ -1,9 +1,18 @@
 import { notFound } from "next/navigation";
 import Link from "next/link";
-import ReactMarkdown from "react-markdown";
+import ReactMarkdown, { type Components } from "react-markdown";
 import remarkGfm from "remark-gfm";
+import rehypeHighlight from "rehype-highlight";
+import "highlight.js/styles/github-dark.css";
 import { getPostBySlug, getAllPosts } from "@/lib/content";
 import Sidebar from "@/components/Sidebar";
+import CalloutBlockquote from "@/components/CalloutBlockquote";
+import CodeBlock from "@/components/CodeBlock";
+
+const markdownComponents: Components = {
+  blockquote: CalloutBlockquote,
+  pre: CodeBlock,
+};
 
 function formatDate(dateStr: string) {
   return new Date(dateStr).toLocaleDateString("en-US", {
@@ -60,7 +69,11 @@ export default async function PostPage({
           )}
         </div>
         <article className="article-content">
-          <ReactMarkdown remarkPlugins={[remarkGfm]}>
+          <ReactMarkdown
+            remarkPlugins={[remarkGfm]}
+            rehypePlugins={[rehypeHighlight]}
+            components={markdownComponents}
+          >
             {post.content}
           </ReactMarkdown>
         </article>

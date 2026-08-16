@@ -90,10 +90,28 @@ body {
     margin-bottom: 16px;
 }
 
+.article-content .code-block {
+    position: relative;
+    margin-bottom: 16px;
+}
+
+.article-content .code-block pre {
+    margin-bottom: 0;
+    padding: 44px 16px 16px;
+    overflow-x: auto;
+}
+
 .article-content pre code {
     background: none;
     padding: 0;
     color: var(--fg);
+}
+
+.article-content .code-block pre code {
+    white-space: pre-wrap;
+    overflow-wrap: anywhere;
+    font-size: 0.85rem;
+    line-height: 1.6;
 }
 
 .article-content a {
@@ -124,6 +142,70 @@ body {
     padding-left: 16px;
     color: var(--dim);
     margin-bottom: 16px;
+}
+
+.article-content .callout {
+    border: 1px solid var(--border);
+    border-left: 3px solid var(--callout-color, var(--muted));
+    border-radius: 8px;
+    background: var(--surface);
+    padding: 12px 16px;
+    margin-bottom: 16px;
+}
+
+.article-content .callout p {
+    color: var(--muted);
+    margin-bottom: 4px;
+}
+
+.article-content .callout p:last-child {
+    margin-bottom: 0;
+}
+
+.article-content .callout .callout-label {
+    color: var(--callout-color, var(--muted));
+    font-size: 0.72rem;
+    font-weight: 600;
+    text-transform: uppercase;
+    letter-spacing: 0.05em;
+    margin-bottom: 8px;
+}
+
+.callout-info {
+    --callout-color: #3b82f6;
+}
+
+.callout-note {
+    --callout-color: #8b5cf6;
+}
+
+.callout-tip {
+    --callout-color: #10b981;
+}
+
+.callout-warning {
+    --callout-color: #f59e0b;
+}
+
+.callout-caution {
+    --callout-color: #ef4444;
+}
+
+.callout-important {
+    --callout-color: #ef4444;
+}
+
+.article-content img {
+    max-width: 100%;
+    height: auto;
+    border: 1px solid var(--border);
+    border-radius: 8px;
+    margin: 12px 0 16px;
+}
+
+.article-content pre code.hljs {
+    background: transparent;
+    padding: 0;
 }
 
 .article-content strong {

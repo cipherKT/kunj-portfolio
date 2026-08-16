@@ -39,7 +39,7 @@ export default function Sidebar({
         {/* top half — photo + bio (unchanged, keep your existing JSX here) */}
         <div className="flex-1 flex flex-col items-center justify-center px-6 py-6 border-b border-border text-center">
           <Image
-            src="/avatar.jpg"
+            src="/avatar.svg"
             alt="Kunj Thakkar"
             width={140}
             height={140}
