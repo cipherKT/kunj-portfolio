@@ -33,10 +33,19 @@ export default async function ProjectPage({
         </Link>
 
         <div className="mt-6 mb-8">
-          <p className="text-dim text-xs uppercase tracking-wider mb-2">
-            {project.tags}
-          </p>
           <h1 className="text-fg text-2xl font-medium mb-3">{project.title}</h1>
+          {project.tags && project.tags.length > 0 && (
+            <div className="flex flex-wrap gap-1.5 mb-3">
+              {project.tags.map((t) => (
+                <span
+                  key={t}
+                  className="inline-block text-xs text-fg border border-border rounded-full px-3 py-1"
+                >
+                  {t}
+                </span>
+              ))}
+            </div>
+          )}
           <p className="text-muted text-sm leading-relaxed mb-4">
             {project.description}
           </p>

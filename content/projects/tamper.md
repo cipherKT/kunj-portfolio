@@ -1,7 +1,7 @@
 ---
 title: "tamper"
 slug: "tamper"
-tag: "Go · Security CLI"
+tags: ["Go", "Security CLI"]
 date: "2026-08-16"
 description: "An interactive Go CLI for testing sensitive account-update flows — host header injection and body manipulation payloads, run one at a time with automatic markdown reporting."
 repo: "https://github.com/cipherKT/tamper"

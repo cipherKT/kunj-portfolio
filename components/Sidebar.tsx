@@ -81,12 +81,14 @@ export default function Sidebar({
               </Link>
             );
           })}
-          <span
-            className="mt-3 px-3 py-2.5 rounded-full border border-border text-dim text-sm text-center cursor-not-allowed"
-            title="Resume coming soon"
+          <a
+            href="/resume.pdf"
+            target="_blank"
+            rel="noopener noreferrer"
+            className="mt-3 px-3 py-2.5 rounded-full border border-border text-dim text-sm text-center hover:text-fg hover:border-dim transition-colors"
           >
-            resume (soon)
-          </span>
+            resume
+          </a>
         </div>
       </aside>
     </>
