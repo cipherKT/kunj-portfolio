@@ -18,7 +18,7 @@ export default function ProjectsPage() {
           {projects.map((project) => (
             <Link
               key={project.slug}
-              href={`/project/${project.slug}`}
+              href={`/projects/${project.slug}`}
               className="border border-border rounded-lg p-5 hover:border-dim transition-colors"
             >
               <p className="text-fg text-sm mb-1.5 ">{project.title}</p>
