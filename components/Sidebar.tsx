@@ -1,11 +1,11 @@
 "use client";
 
-import { useState } from "react";
 import Link from "next/link";
 import Image from "next/image";
 import { usePathname } from "next/navigation";
 import { SiGithub, SiX } from "@icons-pack/react-simple-icons";
 import { Mail, PanelLeftClose, PanelLeftOpen } from "lucide-react";
+import { useSidebar } from "./sidebar-context";
 
 const NAV_LINKS = [
   { href: "/", label: "posts" },
@@ -13,18 +13,14 @@ const NAV_LINKS = [
   { href: "/about", label: "about" },
 ];
 
-export default function Sidebar({
-  defaultCollapsed = false,
-}: {
-  defaultCollapsed?: boolean;
-}) {
+export default function Sidebar() {
   const pathname = usePathname();
-  const [collapsed, setCollapsed] = useState(defaultCollapsed);
+  const { collapsed, toggle } = useSidebar();
 
   return (
     <>
       <button
-        onClick={() => setCollapsed((c) => !c)}
+        onClick={toggle}
         aria-label={collapsed ? "Open sidebar" : "Close sidebar"}
         className="fixed top-4 left-4 z-50 text-muted hover:text-fg transition-colors bg-bg border border-border rounded-md p-1.5"
       >
@@ -34,7 +30,7 @@ export default function Sidebar({
       <aside
         className={`${
           collapsed ? "hidden" : "flex"
-        } w-full md:w-1/4 md:min-h-screen md:sticky md:top-0 flex-col border-b md:border-b-0 md:border-r border-border`}
+        } w-full md:w-1/4 md:h-screen md:sticky md:top-0 md:self-start flex-col border-b md:border-b-0 md:border-r border-border`}
       >
         {/* top half — photo + bio (unchanged, keep your existing JSX here) */}
         <div className="flex-1 flex flex-col items-center justify-center px-6 py-6 border-b border-border text-center">
