@@ -48,13 +48,13 @@ export default function Sidebar() {
             Aspiring security researcher interested in hacking and cybersecurity.
           </p>
           <div className="flex gap-4 mt-4 text-muted">
-            <a href="https://github.com/kunj" target="_blank" rel="noopener noreferrer" aria-label="GitHub" className="hover:text-fg transition-colors">
+            <a href="https://github.com/cipherKT" target="_blank" rel="noopener noreferrer" aria-label="GitHub" className="hover:text-fg transition-colors">
               <SiGithub size={17} />
             </a>
-            <a href="https://twitter.com/kunj" target="_blank" rel="noopener noreferrer" aria-label="X" className="hover:text-fg transition-colors">
+            <a href="https://twitter.com/r00t3d_kt" target="_blank" rel="noopener noreferrer" aria-label="X" className="hover:text-fg transition-colors">
               <SiX size={16} />
             </a>
-            <a href="mailto:kunj@example.com" aria-label="Email" className="hover:text-fg transition-colors">
+            <a href="mailto:kunjthakkar555@gmail.com" aria-label="Email" className="hover:text-fg transition-colors">
               <Mail size={17} strokeWidth={1.75} />
             </a>
           </div>
